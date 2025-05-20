@@ -1,0 +1,11 @@
+{
+  "database": "usermanagement",
+  "username": "root",
+  "password": "IAXi2aWZ3TSAAa3w7lpYM",
+  "dialect": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "logging": false,
+  "schema": "cdusermanagement",
+  "directory": "./models"
+}

@@ -1,0 +1,52 @@
+* {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: none !important;
+  background-color: #c1c1c1;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  overflow: hidden;
+}
+
+main {
+  height: 100vh;
+  overflow: auto;
+}
+
+html,
+body,
+main {
+  scroll-behavior: smooth;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: #ffffff !important;
+  font-weight: 400;
+  font-family: "Outfit Variable", sans-serif;
+}

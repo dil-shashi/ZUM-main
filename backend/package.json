@@ -1,0 +1,51 @@
+{
+  "name": "usermanagement-backend-postgress",
+  "version": "0.0.0",
+  "description": "usermanagement backend",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development node index.js",
+    "sequelize": "sequelize init",
+    "db:create": "sequelize-cli db:create",
+    "db:seq": "sequelize-auto -c ./sequelize-automate.config.json",
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:seed": "sequelize-cli db:seed:all",
+    "db:reset": "node scripts/reset-db.js",
+    "dev": "nodemon index.js"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.17.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "~8.23.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "~2.26.0",
+    "nodemon": "^3.1.10",
+    "sequelize-cli": "^6.6.3"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1215.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "~1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "~4.18.1",
+    "express-validator": "5.3.1",
+    "got": "^12.4.1",
+    "jsonwebtoken": "~8.5.1",
+    "lodash": "^4.17.21",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.7.8",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.6",
+    "sequelize-auto": "^0.8.8",
+    "sequelize-automate": "^1.2.2",
+    "sharp": "^0.31.2",
+    "util": "^0.12.5",
+    "uuid": "^9.0.1"
+  }
+}
