@@ -78,7 +78,7 @@ const Profile = ({ value = 1, onClick = () => { }, sx = {}, isAdmin = true }) =>
       setError(null);
       getUsers()
         .then((data) => {
-          setUsers(data.data || data); // Handles both {data: [...]} and [...]
+          setUsers(data.data || data);
           setLoadingUsers(false);
         })
         .catch(() => {
@@ -210,16 +210,19 @@ const Profile = ({ value = 1, onClick = () => { }, sx = {}, isAdmin = true }) =>
               sx={{
                 maxWidth: 600,
                 width: "100%",
-                overflowX: "auto",
+                overflowX: "unset", // Remove horizontal scroll
+                boxShadow: "none",
                 [theme.breakpoints.down("sm")]: {
                   maxWidth: "100vw",
                   boxShadow: "none",
+                  overflowX: "unset", // Ensure no scroll on mobile
                 },
               }}
             >
               <Table
                 sx={{
                   minWidth: 350,
+                  width: "100%",
                   "& td, & th": {
                     padding: isMobile ? "8px 4px" : "16px",
                     fontSize: isMobile ? "0.85rem" : "1rem",
@@ -232,6 +235,7 @@ const Profile = ({ value = 1, onClick = () => { }, sx = {}, isAdmin = true }) =>
                     <TableCell align="center">Avatar</TableCell>
                     <TableCell align="center">Name</TableCell>
                     <TableCell align="center">Email</TableCell>
+                    <TableCell align="center">Role</TableCell>
                     <TableCell align="center">Actions</TableCell>
                   </TableRow>
                 </TableHead>
@@ -266,7 +270,10 @@ const Profile = ({ value = 1, onClick = () => { }, sx = {}, isAdmin = true }) =>
                         >
                           {user.email}
                         </TableCell>
-                        <TableCell align="right">
+                        <TableCell align="center">
+                          {user.role_id_roles?.name || "N/A"}
+                        </TableCell>
+                        <TableCell align="center">
                           <IconButton
                             size="small"
                             onClick={() => handleEditOpen(user)}
@@ -286,7 +293,7 @@ const Profile = ({ value = 1, onClick = () => { }, sx = {}, isAdmin = true }) =>
                     ))
                   ) : (
                     <TableRow>
-                      <TableCell colSpan={4} align="center">
+                      <TableCell colSpan={5} align="center">
                         No users found.
                       </TableCell>
                     </TableRow>

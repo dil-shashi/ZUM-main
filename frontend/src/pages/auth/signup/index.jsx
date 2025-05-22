@@ -36,11 +36,11 @@ const SignUp = () => {
       if (payload.message) {
         enqueueSnackbar(payload.message, "error");
         setIsLoading(false);
-      } else if (Object.values(get(payload, "data.data")).some((x) => !x)) {
+      } else if (get(payload, "data.data") && Object.values(get(payload, "data.data")).some((x) => !x)) {
         setIsLoading(false);
         setTimeout(() => {
-          navigate("/");
-          enqueueSnackbar("Signup Successfully", "success");
+          enqueueSnackbar("User registered successfully", "success");
+          navigate(login, { replace: true });
         }, 100);
       }
     });
@@ -51,7 +51,6 @@ const SignUp = () => {
       type={"Sign Up"}
       subTitle={() => (
         <>
-          Join User Management today and experienc like never before. Sign up now to get your unlock a world of
           possibilities. Sign up now and start your journey with us! <br />
         </>
       )}

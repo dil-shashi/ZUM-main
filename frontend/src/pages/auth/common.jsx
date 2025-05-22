@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { MultilineChartRounded } from "@mui/icons-material";
 
-const Common = ({ type = "Login", title, subTitle, children, width }) => {
+const Common = ({ type = "Login", title, subTitle, footer = () => {}, children, width }) => {
   return (
     <Box
       sx={{
@@ -32,7 +32,7 @@ const Common = ({ type = "Login", title, subTitle, children, width }) => {
           sx={{ fontWeight: 900, display: "flex", alignItems: "center", zIndex: 2, color: "#00416a", fontSize: "2rem" }}
         >
           <MultilineChartRounded fontSize="4rem" />
-          User Management
+          ZUM
         </Typography>
       </Box>
       <Box
@@ -65,7 +65,7 @@ const Common = ({ type = "Login", title, subTitle, children, width }) => {
             top: 20
           }}
         >
-          <MultilineChartRounded /> User Management
+          <MultilineChartRounded /> ZUM
         </Typography>
         <Box sx={{ width: { xs: "100%", md: width || "80%" } }}>
           <Typography
@@ -86,6 +86,7 @@ const Common = ({ type = "Login", title, subTitle, children, width }) => {
           </Typography>
           {children}
         </Box>
+        {footer()}
       </Box>
     </Box>
   );
