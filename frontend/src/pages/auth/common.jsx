@@ -32,7 +32,7 @@ const Common = ({ type = "Login", title, subTitle, footer = () => {}, children, 
           sx={{ fontWeight: 900, display: "flex", alignItems: "center", zIndex: 2, color: "#00416a", fontSize: "2rem" }}
         >
           <MultilineChartRounded fontSize="4rem" />
-          ZUM
+          User Management
         </Typography>
       </Box>
       <Box
